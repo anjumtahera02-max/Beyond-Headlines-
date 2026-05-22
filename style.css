@@ -1,53 +1,53 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #111;
-  color: white;
+// ❤️ Like Post
+function likePost() {
+  alert("Liked ❤️");
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #222;
-  padding: 15px;
+// 🌙 Dark / Light Mode Toggle
+function toggleMode() {
+  document.body.classList.toggle("light-mode");
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
+// 🔖 Save / Bookmark Post
+let savedPosts = [];
+
+function savePost(postId) {
+  if (savedPosts.includes(postId)) {
+    alert("Already Saved 🔖");
+    return;
+  }
+
+  savedPosts.push(postId);
+  alert("Post Saved 🔖");
+  console.log("Saved Posts:", savedPosts);
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
+// ⬇️ Download Post (basic text download)
+function downloadPost(text) {
+  const blob = new Blob([text], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "civicsphere-post.txt";
+  document.body.appendChild(a);
+  a.click();
+
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
-/* POSTS */
-.feed {
-  padding: 20px;
+// 🚧 Help placeholder
+function showHelp() {
+  alert("Help section coming soon 🚀");
 }
 
-.post {
-  background: #1e1e1e;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 10px;
+// 🔐 Login placeholder
+function login() {
+  alert("Login feature coming soon 🔐");
 }
 
-button {
-  background: crimson;
-  border: none;
-  padding: 8px 12px;
-  color: white;
-  cursor: pointer;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 10px;
-  background: #222;
-}
+// 📝 Signup placeholder
+function signup() {
+  alert("Signup feature coming soon 📝");
+  }
